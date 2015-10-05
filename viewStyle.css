@@ -7,7 +7,7 @@ body {
   width: 108px;
   height: 140px;
   top: 200px;
-  background: url('/Users/alanchin/Desktop/walkingPerson1.png') left top; 
+  background: url('./walkingPerson1.png') left top; 
   animation: play .8s steps(8) infinite;
   position: absolute;
 }
