@@ -1,0 +1,26 @@
+body {
+    background: #24aecd;
+  }
+
+.person {
+  z-index: 2;
+  width: 108px;
+  height: 140px;
+  top: 200px;
+  background: url('/Users/alanchin/Desktop/walkingPerson1.png') left top; 
+  animation: play .8s steps(8) infinite;
+  position: absolute;
+}
+#view {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+#view2 {
+  position: absolute;
+  top: 0px;
+  right: -1763px;
+}
+@keyframes play {
+    100% { background-position: -864px; }
+}
