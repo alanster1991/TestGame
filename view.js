@@ -18,14 +18,12 @@ function moveView() {
       }
    }, 100);
    $(document).keydown(function(e) {
-     console.log("KEYDOWN");
      if( e.keyCode == 32) {
        $('.person').css("top", 100);
      
     }
    });
    $(document).keyup(function(e) {
-    console.log("KEYUP");
     if( e.keyCode == 32) {
       $('.person').css("top", 200);
     }
