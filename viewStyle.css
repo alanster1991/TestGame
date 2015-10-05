@@ -13,13 +13,13 @@ body {
 }
 #view {
   position: absolute;
-  right: 0px;
+  left: 0px;
   top: 0px;
 }
 #view2 {
   position: absolute;
   top: 0px;
-  right: -1763px;
+  left: -1763px;
 }
 @keyframes play {
     100% { background-position: -864px; }
