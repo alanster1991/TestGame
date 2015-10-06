@@ -1,25 +1,26 @@
-function addList() {
-  function addRemoveProcess() {
-    var description = $('#todoInput').val();
-    var newDiv = $("<div/>");
-    newDiv.text(description);
-    var date = new Date();
-    newDiv.append('<a class="deleteButton"> Delete</a>');
-    newDiv.append('<div class="currentDate">' + date + '</div>');
-    newDiv.append('<div type="text" class="userName">Alan</div>');
-    $('#todoItems').append(newDiv);
-    $('#todoInput').val("");
-    newDiv.find(".deleteButton").click(function() {
-      newDiv.remove();
-    });
+var source = $('#templateEntry').html();
+var template = Handlebars.compile(source);
+function addTodoItems(){
+  var description = $('#todoInput').val();
+  var date = new Date();
+  var trimmedDescription = description.trim();
+  if( trimmedDescription){
+    var html = template({
+       description: trimmedDescription,
+        date: date
+      });
+      $('#todoItems').append($(html));
+      $('#todoInput').val("");
   }
-    $('#mybtn').click(function () {
-      addRemoveProcess();
-    });
-  $('#todoInput').keydown(function(e) {
-    if( e.keyCode == 13) {
-
-     addRemoveProcess(); 
-    }
-  });
 }
+$('#todoItems').on("click", ".deleteButton",function(event) {
+  $(event.currentTarget).parent().remove();
+});
+$('#mybtn').click(function() {
+  addTodoItems();
+});
+$('#todoInput').keydown(function(e) {
+  if( e.keyCode === 13) {
+    addTodoItems();
+  }
+});
